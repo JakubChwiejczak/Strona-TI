@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Logowanie</title>
+            <link rel="icon" href="images/favicon.ico">
+            <link rel="stylesheet" href="projekt.css">
+        </head>
+
+        <body class="login-page">
+            <div class="login-container">
+                <h2>Logowanie</h2>
+                <p>Witaj w naszej bibliotece online! Uzyskaj dostęp do tysięcy książek.</p>
+                <form id="loginForm">
+                    <label for="username">Nazwa użytkownika:</label>
+                    <input type="text" id="username" name="username" placeholder="Wprowadź nazwę użytkownika" required> <br>
+        
+                    <label for="password">Hasło:</label>
+                    <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required> <br>
+                    <label>
+                        <input type="checkbox" id="rememberMe"> Zapamiętaj mnie <br>
+                    </label>
+                    <button type="submit">Zaloguj się</button> <br>
+                </form>
+                <p id="errorMessage" style="color: red; display: none;">Nieprawidłowe dane logowania!</p>
+            </div>
+            <script src="login.js"></script> 
+            <footer>
+                @  MA & IZ KTI
+            </footer>
+        </body>
+        </html>
+
+     

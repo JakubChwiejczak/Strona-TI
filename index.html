@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Biblioteka</title>
+            <link rel="icon" href="images/favicon.ico">
+            <link rel="stylesheet" href="projekt.css">
+            <script src="lverify.js"></script>
+            <script src="slide.js"></script>
+        </head>
+
+        <body>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Biblioteka</a></li>
+                        <li><a href="catalog.html">Katalog</a></li>
+                        <li><a href="cart.html">Koszyk</a></li>
+                        <li><a href="aboutUs.html">O nas</a></li>
+                        <li><a href="login.html">Powrót do strony logowania</a></li>
+                    </ul>
+                </nav>
+                <div class="banner">
+                    <img src="book.jpg"/>
+                </div>
+            </header>
+            <main>
+                <section id="welcome">
+                    <h1>Witaj w naszej Bibliotece Online!</h1>
+                    <p>Zapraszamy do odkrywania świata literatury! <br>
+                         Dzięki naszej bibliotece online możesz łatwo przeglądać katalog książek, rezerwować wybrane tytuły i zarządzać swoimi wypożyczeniami.</p>
+                </section>
+                <div class="divider"></div>
+                <section id="rules">
+                    <h2>Zasady korzystania z naszej biblioteki</h2>
+                    <ol>
+                        <li>Przeglądaj dostępne książki w zakładce <a href="catalog.html">Katalog</a>.</li>
+                        <li>Aby zarezerwować książkę, kliknij przycisk „Dodaj do koszyka” przy wybranej pozycji.</li>
+                        <li>Przejdź do zakładki <a href="cart.html">Koszyk</a>, aby sprawdzić wybrane książki i sfinalizować rezerwację.</li>
+                        <li>Pobieramy opłatę manipulacyjną w wysokości 1 zł za skorzystanie z naszej strony oraz dotatkowo 1 zł od każdej wypożyczonej pozycji. </li>
+                        <li>Odbiór książek możliwy jest w wyznaczonym miejscu w bibliotece stacjonarnej.</li>
+                    </ol>
+                    <p>Jeśli masz pytania, skontaktuj się z nami za pomocą <a href="aboutUs.html">formularza kontaktowego.</a></p>
+                </section>
+                <div class="divider"></div>
+                <section id="quotes">
+                    <h2>Cytat na dziś</h2>
+                    <p id="quote"></p>
+                </section>
+            </main>
+            
+            <div class="divider"></div>
+        
+                <input type="checkbox" id="toggleAside" hidden>
+                <label for="toggleAside" id="toggleButton">Odkryj nasze książkowe wydarzenia</label>
+            <aside id="sidePanel">
+                <h2>Książkowe wydarzenia</h2>
+                <ul>
+                    <li><strong>15 stycznia:</strong> Spotkanie z autorem „Czas na czytanie”</li>
+                    <li><strong>20 stycznia:</strong> Warsztaty dla dzieci „Tworzymy własne bajki”</li>
+                    <li><strong>25 stycznia:</strong> Dyskusyjny Klub Książki: „Mały Książę”</li>
+                    <li><strong>5 lutego:</strong> Premiera książki „Tajemnica starej biblioteki”</li>
+                    <li><strong>12 lutego:</strong> Quiz literacki: „Znajomość klasyków”</li>
+                </ul>
+                <div class="divider"></div>
+                <div class="slider-container">
+                    <div class="slider">
+                      <!-- Obrazy w slajderze -->
+                      <div class="slide active">
+                        <img src="images/1 slide.jpeg" alt="Slide 1">
+                      </div>
+                      <div class="slide">
+                        <img src="images/2 slide.jpeg" alt="Slide 2">
+                      </div>
+                      <div class="slide">
+                        <img src="images/3 slide.jpeg" alt="Slide 3">
+                      </div>
+                      <div class="slide">
+                        <img src="images/4 slide.jpeg" alt="Slide 4">
+                      </div>
+                      <div class="slide">
+                        <img src="images/5 slide.jpeg" alt="Slide 5">
+                      </div>
+                    </div>
+                
+                    <!-- Przyciski Nawigacji -->
+                    <button id="prevBtn" class="nav-btn">&#10094;</button>
+                    <button id="nextBtn" class="nav-btn">&#10095;</button>
+                  </div>
+            </aside>
+            <section id="newsletter">
+                <h2>Zapisz się na nasz newsletter</h2>
+                <form id="newsletterForm">
+                    <input type="email" id="email" name="email" placeholder="Wpisz swój e-mail" required>
+                    <button type="submit">Zapisz się</button>
+                </form>
+                
+            </section>
+            
+            
+            
+            <footer>
+                @  MA & IZ KTI
+            </footer>
+            <script src="cytat.js"></script> 
+        </body>
+        
+    </html>
