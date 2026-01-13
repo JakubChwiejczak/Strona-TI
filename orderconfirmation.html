@@ -12,10 +12,10 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">Biblioteka</a>
+                        <a href="index.html">Burgerownia</a>
                     </li>
                     <li>
-                        <a href="catalog.html">Katalog</a>
+                        <a href="catalog.html">Menu</a>
                     </li>
                     <li>
                         <a href="cart.html">Koszyk</a>
@@ -28,13 +28,12 @@
         </header>
 
         <section id="checkout">
-            <h3 id="h3order">Twoje Wypożyczone Książki</h3>
-            <p>Dziękujemy za wypożyczenie książek!</p>
+            <h3 id="h3order">Twoje zamówione burgery</h3>
 
             <table id="checkoutTable">
                 <thead>
                     <tr>
-                        <th>Tytuł Książki</th>
+                        <th>Burger</th>
                     </tr>
                 </thead>
 
@@ -61,10 +60,9 @@
                         <td>${item.title}</td>
                     `;
                     checkoutTableBody.appendChild(row);
-                    totalPrice += 1 + handlingFeePerBook;; // Cena każdej książki to 1 zł
                 });
 
-                orderTotalElement.textContent = `Wartość zamówienia wyniosła: ${totalPrice} zł. Proszę uregulować należność przy odbiorze książek z biblioteki`;
+                orderTotalElement.textContent = `Wartość zamówienia wyniosła: ${totalPrice} zł. Możliwość płatności u dostawcy za pomocą karty lub odliczonej gotówki`;
 
                 // Oczyszczanie koszyka po wejsciu na strone potwierdzenie zamowienia
                 localStorage.removeItem('cart');
@@ -72,9 +70,5 @@
 
             renderCheckout();
         </script>
-
-        <footer>
-            @ MA & IZ KTI
-        </footer>
     </body>
 </html>
