@@ -12,16 +12,16 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">Biblioteka</a>
+                        <a href="index.html">Burgerownia</a>
                     </li>
                     <li>
-                        <a href="catalog.html">Katalog</a>
+                        <a href="catalog.html">Menu</a>
                     </li>
                     <li>
                         <a href="cart.html">Koszyk</a>
                     </li>
                     <li>
-                        <a href="aboutUs.html">O nas</a>
+                        <a href="aboutUs.html">O restauracji</a>
                     </li>
                 </ul>
             </nav>
@@ -29,12 +29,11 @@
 
         <section id="catalog">
             <h3>Twój Koszyk</h3>
-            <p>Dziękujemy za zaufanie!</p>
 
             <table id="cartTable">
                 <thead>
                     <tr>
-                        <th>Tytuł Książki</th>
+                        <th>Burger</th>
                         <th>Cena</th>
                         <th>Usuń</th>
                     </tr>
@@ -46,11 +45,10 @@
 
             <div class="summary">
                 Łączna kwota: <span id="totalPrice">0 zł</span>
-                <p>Opłata rezerwacyjna: <span id="handlingFee">1 zł od książki</span></p>
             </div>
 
             <div class="orderConfirmation">
-                <button id="btncart" onclick="redirectToCheckout()">Wypożycz książki</button>
+                <button id="btncart" onclick="redirectToCheckout()">Zamów burgera</button>
             </div>
         </section>
 
@@ -58,7 +56,6 @@
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             const cartTableBody = document.querySelector('#cartTable tbody');
             const totalPriceElement = document.getElementById('totalPrice');
-            const handlingFeePerBook = 1; // Opłata manipulacyjna 1 zł od książki
 
             function renderCart() {
                 cartTableBody.innerHTML = '';
@@ -72,7 +69,6 @@
                         <td><button onclick="removeFromCart(${index})">Usuń</button></td>
                     `;
                     cartTableBody.appendChild(row);
-                    totalPrice += 1 + handlingFeePerBook; // Cena książki + opłata manipulacyjna
                 });
 
                 totalPriceElement.textContent = `${totalPrice} zł`;
@@ -90,9 +86,6 @@
 
             renderCart();
         </script>
-
-        <footer>
-            @ MA & IZ KTI
-        </footer>
     </body>
 </html>
+
