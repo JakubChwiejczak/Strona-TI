@@ -2,10 +2,94 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Koszyk</title>
+  <title>Menu</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="projekt.css">
   <script src="lverify.js"></script>
+
+  <!-- Dodatkowe style tylko dla tej strony (żeby nie grzebać w całym projekt.css) -->
+  <style>
+    /* 1 na wiersz */
+    .menu-grid{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    /* Karta jako wiersz: obrazek po lewej, opis po prawej */
+    .menu-card{
+      width: 100%;
+      max-width: 900px;
+      background: var(--bg);
+      border: 2px solid var(--dark);
+      border-radius: 10px;
+      padding: 15px;
+      box-sizing: border-box;
+
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .menu-card h4{
+      margin: 0 0 10px 0;
+      font-size: 22px;
+      color: var(--dark);
+    }
+
+    /* białe tło pod obrazkiem (dla PNG i różnych teł) */
+    .img-box{
+      width: 220px;
+      height: 170px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+      flex: 0 0 auto;
+    }
+
+    .img-box img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* ważne: nie ucina + wygląda dobrze dla PNG */
+      display: block;
+    }
+
+    .menu-content{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu-content p{
+      margin: 0;
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .menu-actions{
+      margin-top: 5px;
+    }
+
+    /* Na telefonie: obrazek nad opisem */
+    @media (max-width: 700px){
+      .menu-card{
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .img-box{
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -26,124 +110,160 @@
 
     <div class="menu-grid">
 
-      <!-- 1 -->
       <div class="menu-card">
-        <h4>AvoBeko Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/avobeko-burger.webp" alt="AvoBeko Burger">
-          <figcaption>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('AvoBeko Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>AvoBeko Burger</h4>
+          <p>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('AvoBeko Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 2 -->
       <div class="menu-card">
-        <h4>SerBekon Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/serbekon-burger.webp" alt="SerBekon Burger">
-          <figcaption>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('SerBekon Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>SerBekon Burger</h4>
+          <p>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('SerBekon Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 3 -->
       <div class="menu-card">
-        <h4>Kozi Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/kozi-burger.webp" alt="Kozi Burger">
-          <figcaption>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('Kozi Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Kozi Burger</h4>
+          <p>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Kozi Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 4 -->
       <div class="menu-card">
-        <h4>Crispy Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/crispy-burger.webp" alt="Crispy Burger">
-          <figcaption>Wołowina Black Angus, chrupiący boczek, pikantne Chorizo, ser Cheddar, pomidor, ogórek konserwowy, rukola, prażona cebulka, sos do wyboru, bułka do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('Crispy Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Crispy Burger</h4>
+          <p>Wołowina Black Angus, chrupiący boczek, pikantne Chorizo, ser Cheddar, pomidor, ogórek konserwowy, rukola, prażona cebulka, sos do wyboru, bułka do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Crispy Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 5 -->
       <div class="menu-card">
-        <h4>Smash Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/smash-burger.webp" alt="Smash Burger">
-          <figcaption>100% grillowanej wołowiny, ser Cheddar, chrupiący bekon, pomidor, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('Smash Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Smash Burger</h4>
+          <p>100% grillowanej wołowiny, ser Cheddar, chrupiący bekon, pomidor, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Smash Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 6 -->
       <div class="menu-card">
-        <h4>Pastramix – Nowość</h4>
-        <figure>
-          <img src="images/pastramix-nowosc.webp" alt="Pastramix">
-          <figcaption>Wołowina Black Angus, 2× ser cheddar, pastrami, grillowana cebula, ogórek kiszony, sałata lodowa, sos musztardowo-chrzanowy</figcaption>
-        </figure>
-        <button onclick="addToCart('Pastramix - Nowość')">Dodaj do koszyka</button>
+        <div class="img-box">
+          <img src="images/pastramix-nowosc.webp" alt="Pastramix – Nowość">
+        </div>
+        <div class="menu-content">
+          <h4>Pastramix – Nowość</h4>
+          <p>Wołowina Black Angus, 2× ser cheddar, pastrami, grillowana cebula, ogórek kiszony, sałata lodowa, sos musztardowo-chrzanowy</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Pastramix - Nowość')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 7 -->
       <div class="menu-card">
-        <h4>Keto-On Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/keto-on-burger.webp" alt="Keto-On Burger">
-          <figcaption>Wołowina Black Angus, ser cheddar, boczek, awokado, jajko sadzone, aioli, cebula grillowana, sałata lodowa, bułka keto</figcaption>
-        </figure>
-        <button onclick="addToCart('Keto -On Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Keto-On Burger</h4>
+          <p>Wołowina Black Angus, ser cheddar, boczek, awokado, jajko sadzone, aioli, cebula grillowana, sałata lodowa, bułka keto</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Keto -On Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 8 -->
       <div class="menu-card">
-        <h4>Standard Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/standard-burger.webp" alt="Standard Burger">
-          <figcaption>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('Standard Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Standard Burger</h4>
+          <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Standard Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 9 -->
       <div class="menu-card">
-        <h4>Grillowane Warzywa Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/grillowane-warzywa-burger.webp" alt="Grillowane Warzywa Burger">
-          <figcaption>Kotlet z grillowanych warzyw, ser cheddar, pomidor, ogórek konserwowy, czerwona cebula, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('Grillowane Warzywa Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>Grillowane Warzywa Burger</h4>
+          <p>Kotlet z grillowanych warzyw, ser cheddar, pomidor, ogórek konserwowy, czerwona cebula, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('Grillowane Warzywa Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 10 -->
       <div class="menu-card">
-        <h4>MINI New York Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/mini-new-york-burger.webp" alt="MINI New York Burger">
-          <figcaption>Wołowina Black Angus, ser cheddar, bekon, jajko sadzone, pomidor, cebula, ogórek, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('MINI New York Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>MINI New York Burger</h4>
+          <p>Wołowina Black Angus, ser cheddar, bekon, jajko sadzone, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('MINI New York Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 11 -->
       <div class="menu-card">
-        <h4>MINI Standard Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/mini-standard-burger.webp" alt="MINI Standard Burger">
-          <figcaption>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('MINI Standard Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>MINI Standard Burger</h4>
+          <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('MINI Standard Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
-      <!-- 12 -->
       <div class="menu-card">
-        <h4>MINI AvoBeko Burger</h4>
-        <figure>
+        <div class="img-box">
           <img src="images/avobeko-burger.webp" alt="MINI AvoBeko Burger">
-          <figcaption>Wołowina Black Angus, ser cheddar, bekon, awokado, pomidor, cebula, ogórek, rukola oraz sos do wyboru</figcaption>
-        </figure>
-        <button onclick="addToCart('MINI AvoBeko Burger')">Dodaj do koszyka</button>
+        </div>
+        <div class="menu-content">
+          <h4>MINI AvoBeko Burger</h4>
+          <p>Wołowina Black Angus, ser cheddar, bekon, awokado, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p>
+          <div class="menu-actions">
+            <button onclick="addToCart('MINI AvoBeko Burger')">Dodaj do koszyka</button>
+          </div>
+        </div>
       </div>
 
     </div>
