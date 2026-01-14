@@ -461,8 +461,70 @@ address {
   font-family: 'Times New Roman', Times, serif;
 }
 
+.menu-card{
+  width: 100%;
+  max-width: 900px;
+
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 15px;
+
+  background: var(--bg);
+  border: 2px solid var(--dark);
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: start;
+}
 
 
-.menu-card figure{
-  
+.img-box{
+  width: 220px;
+  height: 170px;
+  background: var(--textInv);
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.img-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.menu-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.menu-actions{
+  margin-top: auto;
+}
+
+
+.menu-actions button{
+  width: fit-content;
+  padding: 10px 16px;
+}
+
+@media (max-width: 700px){
+  .menu-card{
+    grid-template-columns: 1fr;
+  }
+  .img-box{
+    width: 100%;
+    height: 220px;
+  }
+  .menu-actions button{
+    width: 100%;
+  }
 }
