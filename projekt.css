@@ -1,6 +1,6 @@
 
 body {
-    background-image: url("images/beige.jpg");
+    background-color: #E8E2D6;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -56,7 +56,7 @@ body {
   
   .banner {
         width: 100%;
-        height: 600px;
+        height: 700px;
         background-image: url('images/zdjecie-agh.jpg');
         background-repeat: no-repeat;
         background-position: center;
