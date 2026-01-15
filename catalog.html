@@ -82,17 +82,7 @@
       font-size: 45px; 
     }
 
-    /* Na telefonie: obrazek nad opisem */
-    @media (max-width: 700px){
-      .menu-card{
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .img-box{
-        width: 100%;
-        height: 220px;
-      }
-    }
+   
   </style>
 </head>
 
@@ -116,15 +106,15 @@
 
       <div class="menu-card">
         <div class="img-box">
-          <img src="images/avobeko-burger.webp" alt="AvoBeko Burger">
+          <img src="images/avobeko-burger.webp" alt="AvoBeko Burger"> 
         </div>
         <div class="menu-content" data-id="1" data-nazwa="AvoBeko Burger" data-cena="41"> 
+          <span>AvoBeko Burger</span> - <span>41 zł</span>
+          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
           <h4>AvoBeko Burger</h4> 
           <h5><b>41 zł</b></h5>
           <p>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
-          <div class="menu-actions">
-            <button onclick="addToCart('AvoBeko Burger')">Dodaj do koszyka</button>
-          </div>
+          
         </div>
       </div>
 
@@ -132,13 +122,12 @@
         <div class="img-box">
           <img src="images/serbekon-burger.webp" alt="SerBekon Burger">
         </div>
-        <div class="menu-content" data-id="2" data-nazwa="SerBekon Burger" data-cena="43">
+        <div class="menu-content" data-id="2" data-nazwa="SerBekon Burger" data-cena="43"> 
+          <span>SerBekon Burger</span> - <span>43 zł</span>
+          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
           <h4>SerBekon Burger</h4> 
           <h5><b>43 zł</b></h5>
           <p>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
-          <div class="menu-actions">
-            <button onclick="addToCart('SerBekon Burger')">Dodaj do koszyka</button>
-          </div>
         </div>
       </div>
 
@@ -146,13 +135,13 @@
         <div class="img-box">
           <img src="images/kozi-burger.webp" alt="Kozi Burger">
         </div>
-        <div class="menu-content" data-id="3" data-nazwa="Kozi Burger" data-cena="39">
+        <div class="menu-content" data-id="3" data-nazwa="Kozi Burger" data-cena="39"> 
+          <span>Kozi Burger</span> - <span>39 zł</span>
+          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
           <h4>Kozi Burger</h4> 
           <h5><b>39 zł</b></h5>
           <p>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</p>
-          <div class="menu-actions">
-            <button onclick="addToCart('Kozi Burger')">Dodaj do koszyka</button>
-          </div>
+         
         </div>
       </div>
 
@@ -297,6 +286,7 @@ function addToCart(burgerName) {
 
 </body>
 </html>
+
 
 
 
