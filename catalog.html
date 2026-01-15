@@ -278,7 +278,7 @@ document.querySelectorAll('.dodaj-do-koszyka').forEach(btn => {
     if (istnieje) {
       istnieje.quantity += 1;
     } else {
-      koszyk.push({ id, title: nazwa, price: cena, quantity: 1 });
+      koszyk.push({ id, title: nazwa, price: data-cena, quantity: 1 });
     }
 
     // Zapis do localStorage
@@ -290,6 +290,7 @@ document.querySelectorAll('.dodaj-do-koszyka').forEach(btn => {
 </script>
 </body>
 </html>
+
 
 
 
