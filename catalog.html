@@ -251,8 +251,9 @@
 
     </div>
   </section>
-</main>
-
+</main> 
+  
+/*
 <script>
 function addToCart(burgerName) {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -261,9 +262,45 @@ function addToCart(burgerName) {
   alert(`${burgerName} został dodany do koszyka!`);
 }
 </script>
-
+*/ 
+  <script>
+const koszyk = [];
+const koszykList = document.getElementById('koszyk');
+const sumaSztuk = document.getElementById('suma-sztuk');
+const sumaCena = document.getElementById('suma-cena');
+function aktualizujKoszyk() {
+  koszykList.innerHTML = '';
+  let suma = 0, liczba = 0;
+  koszyk.forEach(produkt => {
+    const li = document.createElement('li');
+    li.textContent = `${produkt.nazwa} x${produkt.sztuk} – ${produkt.cena * produkt.sztuk} zł`;
+    koszykList.appendChild(li);
+    suma += produkt.cena * produkt.sztuk;
+    liczba += produkt.sztuk;
+  });
+  sumaSztuk.textContent = liczba;
+  sumaCena.textContent = suma;
+}
+document.querySelectorAll('.dodaj-do-koszyka').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const el = this.closest('.produkt');
+    const id = el.dataset.id;
+    const nazwa = el.dataset.nazwa;
+    const cena = parseFloat(el.dataset.cena);
+    const istnieje = koszyk.find(p => p.id === id);
+    if (istnieje) {
+      istnieje.sztuk += 1;
+    } else {
+      koszyk.push({ id, nazwa, cena, sztuk: 1 });
+    }
+    aktualizujKoszyk();
+    alert('Produkt został dodany do koszyka.');
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
