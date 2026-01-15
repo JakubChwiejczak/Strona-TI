@@ -87,50 +87,48 @@
             renderCart();
         </script> 
 
-//nasze 
-///
-   /// 
-        <script> 
-            const koszyk = JSON.parse(localStorage.getItem('cart')) || [];
-        const koszykList = document.getElementById('koszykList');
-        const sumaSztuk = document.getElementById('sumaSztuk');
-        const sumaCena = document.getElementById('sumaCena');
+/*nasze */
+        <script>
+const koszyk = JSON.parse(localStorage.getItem('cart')) || [];
+const koszykList = document.getElementById('koszykList');
+const sumaSztuk = document.getElementById('sumaSztuk');
+const sumaCena = document.getElementById('sumaCena');
 
-        function renderCart() {
-            koszykList.innerHTML = '';
-            let totalSztuk = 0;
-            let totalCena = 0;
+function renderCart() {
+  koszykList.innerHTML = '';
+  let totalSztuk = 0;
+  let totalCena = 0;
 
-            koszyk.forEach((produkt, index) => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    ${produkt.title} x${produkt.quantity} – ${produkt.price * produkt.quantity} zł
-                    <button onclick="removeFromCart(${index})">Usuń</button>
-                `;
-                koszykList.appendChild(li);
+  koszyk.forEach((produkt, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      ${produkt.title} x${produkt.quantity} – ${produkt.price * produkt.quantity} zł
+      <button onclick="removeFromCart(${index})">Usuń</button>
+    `;
+    koszykList.appendChild(li);
 
-                totalSztuk += produkt.quantity;
-                totalCena += produkt.price * produkt.quantity;
-            });
+    totalSztuk += produkt.quantity;
+    totalCena += produkt.price * produkt.quantity;
+  });
 
-            sumaSztuk.textContent = totalSztuk;
-            sumaCena.textContent = totalCena + ' zł';
-        }
+  sumaSztuk.textContent = totalSztuk;
+  sumaCena.textContent = totalCena + ' zł';
+}
 
-        function removeFromCart(index) {
-            koszyk.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(koszyk));
-            renderCart();
-        }
+function removeFromCart(index) {
+  koszyk.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(koszyk));
+  renderCart();
+}
 
-        function redirectToCheckout() {
-            window.location.href = "orderconfirmation.html";
-        }
+function redirectToCheckout() {
+  window.location.href = "orderconfirmation.html";
+}
 
-        renderCart();
-        </script>
-        
+renderCart();
+</script>
     </body>
 </html>
+
 
 
