@@ -27,30 +27,20 @@
             </nav>
         </header>
 
-        <section id="catalog">
-            <h3>Twój Koszyk</h3>
+        <section id="cartSection">
+  <h3>Twój Koszyk</h3>
 
-            <table id="cartTable">
-                <thead>
-                    <tr>
-                        <th>Burger</th>
-                        <th>Cena</th>
-                        <th>Usuń</th>
-                    </tr>
-                </thead>
+  <ul id="koszykList"></ul>
 
-                <tbody>
-                </tbody>
-            </table>
+  <div class="summary">
+    Liczba sztuk: <span id="sumaSztuk">0</span><br>
+    Łączna kwota: <span id="sumaCena">0 zł</span>
+  </div>
 
-            <div class="summary">
-                Łączna kwota: <span id="totalPrice">0 zł</span>
-            </div>
-
-            <div class="orderConfirmation">
-                <button id="btncart" onclick="redirectToCheckout()">Zamów burgera</button>
-            </div>
-        </section>
+  <div class="orderConfirmation">
+    <button id="btncart" onclick="redirectToCheckout()">Zamów burgera</button>
+  </div>
+</section>
 
         <script>
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -129,6 +119,7 @@ renderCart();
 </script>
     </body>
 </html>
+
 
 
 
