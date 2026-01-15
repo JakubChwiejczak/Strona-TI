@@ -263,43 +263,34 @@ function addToCart(burgerName) {
 }
 </script>
 */ 
-  <script>
-const koszyk = [];
-const koszykList = document.getElementById('koszyk');
-const sumaSztuk = document.getElementById('suma-sztuk');
-const sumaCena = document.getElementById('suma-cena');
-function aktualizujKoszyk() {
-  koszykList.innerHTML = '';
-  let suma = 0, liczba = 0;
-  koszyk.forEach(produkt => {
-    const li = document.createElement('li');
-    li.textContent = `${produkt.nazwa} x${produkt.sztuk} – ${produkt.cena * produkt.sztuk} zł`;
-    koszykList.appendChild(li);
-    suma += produkt.cena * produkt.sztuk;
-    liczba += produkt.sztuk;
-  });
-  sumaSztuk.textContent = liczba;
-  sumaCena.textContent = suma;
-}
+<script>
 document.querySelectorAll('.dodaj-do-koszyka').forEach(btn => {
   btn.addEventListener('click', function() {
-    const el = this.closest('.produkt');
+    const el = this.closest('.menu-content');
     const id = el.dataset.id;
     const nazwa = el.dataset.nazwa;
     const cena = parseFloat(el.dataset.cena);
+
+    // Pobranie koszyka z localStorage lub utworzenie nowego
+    const koszyk = JSON.parse(localStorage.getItem('cart')) || [];
     const istnieje = koszyk.find(p => p.id === id);
+
     if (istnieje) {
-      istnieje.sztuk += 1;
+      istnieje.quantity += 1;
     } else {
-      koszyk.push({ id, nazwa, cena, sztuk: 1 });
+      koszyk.push({ id, title: nazwa, price: cena, quantity: 1 });
     }
-    aktualizujKoszyk();
-    alert('Produkt został dodany do koszyka.');
+
+    // Zapis do localStorage
+    localStorage.setItem('cart', JSON.stringify(koszyk));
+
+    alert(`${nazwa} został dodany do koszyka!`);
   });
 });
 </script>
 </body>
 </html>
+
 
 
 
