@@ -60,40 +60,7 @@
   </div>
 </section>
 
-        <script>
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartTableBody = document.querySelector('#cartTable tbody');
-            const totalPriceElement = document.getElementById('totalPrice');
-
-            function renderCart() {
-                cartTableBody.innerHTML = '';
-                let totalPrice = 0;
-
-                cart.forEach((item, index) => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${item.title}</td>
-                        <td>1 zł</td>
-                        <td><button onclick="removeFromCart(${index})">Usuń</button></td>
-                    `;
-                    cartTableBody.appendChild(row);
-                });
-
-                totalPriceElement.textContent = `${totalPrice} zł`;
-            }
-
-            function removeFromCart(index) {
-                cart.splice(index, 1);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                renderCart();
-            }
-
-            function redirectToCheckout() {
-                window.location.href = "orderconfirmation.html"; // Przekierowanie na stronę "checkout.html"
-            }
-
-            renderCart();
-        </script> 
+        
 
 /*nasze */
         <script>
@@ -137,6 +104,7 @@ renderCart();
 </script>
     </body>
 </html>
+
 
 
 
