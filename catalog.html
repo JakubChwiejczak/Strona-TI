@@ -5,106 +5,153 @@
   <title>Menu</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="projekt.css">
-  <script src="lverify.js"></script>
 
-  <!-- Dodatkowe style tylko dla tej strony (żeby nie grzebać w całym projekt.css) -->
   <style>
-    /* 1 na wiersz */
-    .menu-grid{
-      display: flex;
-      flex-direction: column;
+    .layout{
+      display: grid;
+      grid-template-columns: 1fr 360px;
       gap: 20px;
-      align-items: center;
+      max-width: 1300px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    /* Karta jako wiersz: obrazek po lewej, opis po prawej */
-    .menu-card{
-      width: 100%;
-      max-width: 900px;
+    .menu-col{
       background: var(--bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
+    .cart-col{
+      position: sticky;
+      top: 90px;
+      align-self: start;
+      background: var(--bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
       border: 2px solid var(--dark);
-      border-radius: 10px;
-      padding: 15px;
-      box-sizing: border-box;
-
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
     }
 
-    .menu-card h4{
-      margin: 0 0 10px 0;
-      font-size: 22px;
+    .cart-col h3{
+      margin: 0 0 10px;
       color: var(--dark);
+      text-align: center;
+      font-size: 26px;
     }
 
-    /* białe tło pod obrazkiem (dla PNG i różnych teł) */
-    .img-box{
-      width: 220px;
-      height: 170px;
-      background: #FFFFFF;
-      border-radius: 10px;
-      border: 1px solid rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px;
-      box-sizing: border-box;
-      flex: 0 0 auto;
-    }
-
-    .img-box img{
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* ważne: nie ucina + wygląda dobrze dla PNG */
-      display: block;
-    }
-
-    .menu-content{
-      flex: 1;
+    #koszyk{
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .menu-content p{
-      margin: 0;
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 16px;
+    #koszyk li{
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px;
+      border: 2px solid var(--dark);
+      border-radius: 10px;
+      background: var(--bg);
+      align-items: center;
     }
 
-    .menu-actions{
-      margin-top: 5px;
-    } 
-    .br 
-    { 
-      font-size: 45px; 
+    .cart-summary{
+      margin-top: 12px;
+      padding: 12px;
+      border: 2px solid var(--dark);
+      border-radius: 10px;
+      background: var(--primary);
+      color: var(--dark);
+      font-weight: bold;
     }
 
-   
+    .cart-summary span{ font-weight: normal; }
+
+    .cart-actions{
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .cart-actions button{
+      flex: 1;
+    }
+
+    .remove-btn{
+      padding: 6px 10px;
+      font-size: 12px;
+    }
   </style>
 </head>
 
 <body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Burgerownia</a></li>
-      <li><a href="catalog.html">Menu</a></li>
-      <li><a href="cart.html">Koszyk</a></li>
-      <li><a href="aboutUs.html">O restauracji</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Burgerownia</a></li>
+        <li><a href="catalog.html">Menu</a></li>
+        <li><a href="aboutUs.html">O restauracji</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <section id="Menu">
-    <h3>Menu</h3>
+  <main>
+    <div class="layout">
+      <section class="menu-col">
+        <h3>Menu</h3>
 
-    <div class="menu-grid">
+        <div class="menu-grid" id="produkty">
 
-      <div class="menu-card">
+          <div class="menu-card produkt" data-id="1" data-nazwa="AvoBeko Burger" data-cena="32">
+            <div class="img-box">
+              <img src="images/avobeko-burger.webp" alt="AvoBeko Burger">
+            </div>
+            <div class="menu-content">
+              <h4>AvoBeko Burger</h4>
+              <p>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
+              <p><b>Cena:</b> 32 zł</p>
+              <div class="menu-actions">
+                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card produkt" data-id="2" data-nazwa="SerBekon Burger" data-cena="31">
+            <div class="img-box">
+              <img src="images/serbekon-burger.webp" alt="SerBekon Burger">
+            </div>
+            <div class="menu-content">
+              <h4>SerBekon Burger</h4>
+              <p>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
+              <p><b>Cena:</b> 31 zł</p>
+              <div class="menu-actions">
+                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card produkt" data-id="3" data-nazwa="Kozi Burger" data-cena="33">
+            <div class="img-box">
+              <img src="images/kozi-burger.webp" alt="Kozi Burger">
+            </div>
+            <div class="menu-content">
+              <h4>Kozi Burger</h4>
+              <p>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</p>
+              <p><b>Cena:</b> 33 zł</p>
+              <div class="menu-actions">
+                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
+              </div>
+            </div>
+          </div> ----------------------------------------------
+
+          <div class="menu-card">
         <div class="img-box">
           <img src="images/avobeko-burger.webp" alt="AvoBeko Burger"> 
         </div>
@@ -248,49 +295,86 @@
           <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
         </div>
       </div>
+          
+        </div>
+      </section>
 
+      <aside class="cart-col">
+        <h3>Twój koszyk</h3>
+        <ul id="koszyk"></ul>
+
+        <div class="cart-summary">
+          Liczba produktów: <span id="suma-sztuk">0</span><br>
+          Suma do zapłaty: <span id="suma-cena">0</span> zł
+        </div>
+
+        <div class="cart-actions">
+          <button id="clearCart">Wyczyść</button>
+          <button id="saveCart">Zapisz</button>
+        </div>
+      </aside>
     </div>
-  </section>
-</main> 
-  
+  </main>
 
-<script>
-document.querySelectorAll('.dodaj-do-koszyka').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const el = this.closest('.menu-content');
-    const id = el.dataset.id;
-    const nazwa = el.dataset.nazwa;
-    const cena = parseFloat(el.dataset.cena);
+  <script>
+    const koszyk = JSON.parse(localStorage.getItem("cart")) || [];
+    const koszykList = document.getElementById("koszyk");
+    const sumaSztuk = document.getElementById("suma-sztuk");
+    const sumaCena = document.getElementById("suma-cena");
 
-    // Pobranie koszyka z localStorage lub utworzenie nowego
-    const koszyk = JSON.parse(localStorage.getItem('cart')) || [];
-    const istnieje = koszyk.find(p => p.id === id);
+    function aktualizujKoszyk(){
+      koszykList.innerHTML = "";
+      let suma = 0, liczba = 0;
 
-    if (istnieje) {
-      istnieje.quantity += 1;
-    } else {
-      koszyk.push({ id, title: nazwa, price: cena, quantity: 1 });
+      koszyk.forEach((produkt, idx) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${produkt.nazwa} x${produkt.sztuk} – ${produkt.cena * produkt.sztuk} zł</span>
+          <button class="remove-btn" onclick="usun(${idx})">Usuń</button>
+        `;
+        koszykList.appendChild(li);
+        suma += produkt.cena * produkt.sztuk;
+        liczba += produkt.sztuk;
+      });
+
+      sumaSztuk.textContent = liczba;
+      sumaCena.textContent = suma;
     }
 
-    // Zapis do localStorage
-    localStorage.setItem('cart', JSON.stringify(koszyk));
+    function usun(idx){
+      koszyk.splice(idx, 1);
+      localStorage.setItem("cart", JSON.stringify(koszyk));
+      aktualizujKoszyk();
+    }
 
-    alert(`${nazwa} został dodany do koszyka!`);
-  });
-});
-</script>
+    document.querySelectorAll(".dodaj-do-koszyka").forEach(btn => {
+      btn.addEventListener("click", function(){
+        const el = this.closest(".produkt");
+        const id = el.dataset.id;
+        const nazwa = el.dataset.nazwa;
+        const cena = parseFloat(el.dataset.cena);
+
+        const istnieje = koszyk.find(p => p.id === id);
+        if (istnieje) istnieje.sztuk += 1;
+        else koszyk.push({ id, nazwa, cena, sztuk: 1 });
+
+        localStorage.setItem("cart", JSON.stringify(koszyk));
+        aktualizujKoszyk();
+      });
+    });
+
+    document.getElementById("clearCart").addEventListener("click", () => {
+      koszyk.length = 0;
+      localStorage.setItem("cart", JSON.stringify(koszyk));
+      aktualizujKoszyk();
+    });
+
+    document.getElementById("saveCart").addEventListener("click", () => {
+      localStorage.setItem("cart", JSON.stringify(koszyk));
+      alert("Koszyk zapisany.");
+    });
+
+    aktualizujKoszyk();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
