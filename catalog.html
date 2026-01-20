@@ -5,108 +5,7 @@
   <title>Menu</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="projekt.css">
-
-  <style>
-    .layout{
-      display:grid;
-      grid-template-columns:1fr 360px;
-      gap:20px;
-      max-width:1300px;
-      margin:20px auto;
-      padding:20px;
-      box-sizing:border-box;
-    }
-
-    .menu-col{
-      background:#E8E2D6;
-      border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      padding:20px;
-    }
-
-    .menu-col h3{
-      margin-top:0;
-      text-align:center;
-      font-size:34px;
-      color:#1A1A1A;
-    }
-
-    .cart-col{
-      position:sticky;
-      top:90px;
-      align-self:start;
-      background:#E8E2D6;
-      border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      padding:20px;
-      border:2px solid #1A1A1A;
-      box-sizing:border-box;
-    }
-
-    .cart-col h3{
-      margin:0 0 10px;
-      color:#1A1A1A;
-      text-align:center;
-      font-size:26px;
-    }
-
-    #koszyk{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    #koszyk li{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding:10px;
-      border:2px solid #1A1A1A;
-      border-radius:10px;
-      background:#E8E2D6;
-      align-items:center;
-      box-sizing:border-box;
-    }
-
-    .cart-summary{
-      margin-top:12px;
-      padding:12px;
-      border:2px solid #1A1A1A;
-      border-radius:10px;
-      background:#C49A6C;
-      color:#1A1A1A;
-      font-weight:bold;
-      box-sizing:border-box;
-    }
-
-    .cart-summary span{font-weight:normal}
-
-    .cart-actions{
-      margin-top:10px;
-      display:flex;
-      gap:10px;
-    }
-
-    .cart-actions button{flex:1}
-
-    .remove-btn{
-      padding:6px 10px;
-      font-size:12px;
-    }
-
-    .price{
-      margin:0;
-      font-weight:bold;
-      color:#1A1A1A;
-    }
-
-    .menu-card .dodaj-do-koszyka{
-      width:fit-content;
-    }
-  </style>
+  
 </head>
 
 <body>
@@ -261,11 +160,13 @@
 
         <div class="cart-actions">
           <button id="clearCart">Wyczyść</button>
-          <button id="saveCart">Zapisz</button>
+
         </div>
       </aside>
     </div>
   </main>
+
+  <!-- https://creativecoding.pl/jak-zrobic-koszyk-w-html/ -->
 
   <script>
     const koszyk = JSON.parse(localStorage.getItem("cart")) || [];
@@ -315,14 +216,10 @@
       koszyk.length = 0;
       localStorage.setItem("cart", JSON.stringify(koszyk));
       aktualizujKoszyk();
-    });
-
-    document.getElementById("saveCart").addEventListener("click", () => {
-      localStorage.setItem("cart", JSON.stringify(koszyk));
-      alert("Koszyk zapisany.");
-    });
+    })
 
     aktualizujKoszyk();
   </script>
 </body>
 </html>
+
