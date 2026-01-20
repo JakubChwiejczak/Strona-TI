@@ -2,21 +2,48 @@
 <html> 
 
     <style> 
-    .summary { 
-       
-        
-    } 
-    .koszykList{ 
-        
-    } 
+    #cartSection h3{
+  font-size:34px;
+  font-weight:bold;
+  text-align:center;
+  color:var(--dark);
+  margin:0 0 10px;
+}
 
-     .cartSection{  
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-         
-     }
+#koszykList{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+#koszykList li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border:2px solid var(--dark);
+  border-radius:10px;
+  background:var(--bg);
+}
+
+.summary{
+  margin-top:10px;
+  padding:12px;
+  border:2px solid var(--dark);
+  border-radius:10px;
+  background:var(--primary);
+  color:var(--dark);
+  font-weight:bold;
+}
+
+.summary span{
+  font-weight:normal;
+}
+
     </style>
     <head>
         <title>Koszyk</title>
@@ -94,6 +121,7 @@ renderCart();
 </script>
     </body>
 </html>
+
 
 
 
