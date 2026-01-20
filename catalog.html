@@ -8,85 +8,103 @@
 
   <style>
     .layout{
-      display: grid;
-      grid-template-columns: 1fr 360px;
-      gap: 20px;
-      max-width: 1300px;
-      margin: 20px auto;
-      padding: 20px;
-      box-sizing: border-box;
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:20px;
+      max-width:1300px;
+      margin:20px auto;
+      padding:20px;
+      box-sizing:border-box;
     }
 
     .menu-col{
-      background: var(--bg);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
+      background:var(--bg);
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      padding:20px;
+    }
+
+    .menu-col h3{
+      margin-top:0;
+      text-align:center;
+      font-size:34px;
+      color:var(--dark);
     }
 
     .cart-col{
-      position: sticky;
-      top: 90px;
-      align-self: start;
-      background: var(--bg);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      border: 2px solid var(--dark);
+      position:sticky;
+      top:90px;
+      align-self:start;
+      background:var(--bg);
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      padding:20px;
+      border:2px solid var(--dark);
+      box-sizing:border-box;
     }
 
     .cart-col h3{
-      margin: 0 0 10px;
-      color: var(--dark);
-      text-align: center;
-      font-size: 26px;
+      margin:0 0 10px;
+      color:var(--dark);
+      text-align:center;
+      font-size:26px;
     }
 
     #koszyk{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
     }
 
     #koszyk li{
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px;
-      border: 2px solid var(--dark);
-      border-radius: 10px;
-      background: var(--bg);
-      align-items: center;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px;
+      border:2px solid var(--dark);
+      border-radius:10px;
+      background:var(--bg);
+      align-items:center;
+      box-sizing:border-box;
     }
 
     .cart-summary{
-      margin-top: 12px;
-      padding: 12px;
-      border: 2px solid var(--dark);
-      border-radius: 10px;
-      background: var(--primary);
-      color: var(--dark);
-      font-weight: bold;
+      margin-top:12px;
+      padding:12px;
+      border:2px solid var(--dark);
+      border-radius:10px;
+      background:var(--primary);
+      color:var(--dark);
+      font-weight:bold;
+      box-sizing:border-box;
     }
 
-    .cart-summary span{ font-weight: normal; }
+    .cart-summary span{font-weight:normal}
 
     .cart-actions{
-      margin-top: 10px;
-      display: flex;
-      gap: 10px;
+      margin-top:10px;
+      display:flex;
+      gap:10px;
     }
 
-    .cart-actions button{
-      flex: 1;
-    }
+    .cart-actions button{flex:1}
 
     .remove-btn{
-      padding: 6px 10px;
-      font-size: 12px;
+      padding:6px 10px;
+      font-size:12px;
+    }
+
+    .price{
+      margin:0;
+      font-weight:bold;
+      color:var(--dark);
+    }
+
+    .menu-card .dodaj-do-koszyka{
+      width:fit-content;
     }
   </style>
 </head>
@@ -109,193 +127,126 @@
 
         <div class="menu-grid" id="produkty">
 
-          <div class="menu-card produkt" data-id="1" data-nazwa="AvoBeko Burger" data-cena="32">
-            <div class="img-box">
-              <img src="images/avobeko-burger.webp" alt="AvoBeko Burger">
-            </div>
+          <div class="menu-card produkt" data-id="1" data-nazwa="AvoBeko Burger" data-cena="41">
+            <div class="img-box"><img src="images/avobeko-burger.webp" alt="AvoBeko Burger"></div>
             <div class="menu-content">
               <h4>AvoBeko Burger</h4>
+              <p class="price">41 zł</p>
               <p>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
-              <p><b>Cena:</b> 32 zł</p>
-              <div class="menu-actions">
-                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-              </div>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
             </div>
           </div>
 
-          <div class="menu-card produkt" data-id="2" data-nazwa="SerBekon Burger" data-cena="31">
-            <div class="img-box">
-              <img src="images/serbekon-burger.webp" alt="SerBekon Burger">
-            </div>
+          <div class="menu-card produkt" data-id="2" data-nazwa="SerBekon Burger" data-cena="43">
+            <div class="img-box"><img src="images/serbekon-burger.webp" alt="SerBekon Burger"></div>
             <div class="menu-content">
               <h4>SerBekon Burger</h4>
+              <p class="price">43 zł</p>
               <p>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
-              <p><b>Cena:</b> 31 zł</p>
-              <div class="menu-actions">
-                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-              </div>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
             </div>
           </div>
 
-          <div class="menu-card produkt" data-id="3" data-nazwa="Kozi Burger" data-cena="33">
-            <div class="img-box">
-              <img src="images/kozi-burger.webp" alt="Kozi Burger">
-            </div>
+          <div class="menu-card produkt" data-id="3" data-nazwa="Kozi Burger" data-cena="39">
+            <div class="img-box"><img src="images/kozi-burger.webp" alt="Kozi Burger"></div>
             <div class="menu-content">
               <h4>Kozi Burger</h4>
+              <p class="price">39 zł</p>
               <p>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</p>
-              <p><b>Cena:</b> 33 zł</p>
-              <div class="menu-actions">
-                <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-              </div>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
             </div>
           </div>
 
-          <div class="menu-card">
-        <div class="img-box">
-          <img src="images/avobeko-burger.webp" alt="AvoBeko Burger"> 
-        </div>
-        <div class="menu-content" data-id="1" data-nazwa="AvoBeko Burger" data-cena="41"> 
-         
-          <h4>AvoBeko Burger</h4> 
-          <h5><b>41 zł</b></h5>
-          <p>Wołowina Black Angus, awokado, chrupiący boczek, ser Cheddar, pomidor, czerwona cebula, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p>
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="4" data-nazwa="Crispy Burger" data-cena="46">
+            <div class="img-box"><img src="images/crispy-burger.webp" alt="Crispy Burger"></div>
+            <div class="menu-content">
+              <h4>Crispy Burger</h4>
+              <p class="price">46 zł</p>
+              <p>Wołowina Black Angus, chrupiący boczek, pikantne Chorizo, ser Cheddar, pomidor, ogórek konserwowy, rukola, prażona cebulka, sos do wyboru, bułka do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/serbekon-burger.webp" alt="SerBekon Burger">
-        </div>
-        <div class="menu-content" data-id="2" data-nazwa="SerBekon Burger" data-cena="43"> 
-          <h4>SerBekon Burger</h4> 
-          <h5><b>43 zł</b></h5>
-          <p>Wołowina Black Angus, chrupiący boczek, ser Cheddar, czerwona cebula, pomidor, ogórek konserwowy, rukola, sos do wyboru, bułka do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="5" data-nazwa="Smash Burger" data-cena="32">
+            <div class="img-box"><img src="images/smash-burger.webp" alt="Smash Burger"></div>
+            <div class="menu-content">
+              <h4>Smash Burger</h4>
+              <p class="price">32 zł</p>
+              <p>100% grillowanej wołowiny, ser Cheddar, chrupiący bekon, pomidor, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/kozi-burger.webp" alt="Kozi Burger">
-        </div>
-        <div class="menu-content" data-id="3" data-nazwa="Kozi Burger" data-cena="39"> 
-          <h4>Kozi Burger</h4> 
-          <h5><b>39 zł</b></h5>
-          <p>Wołowina Black Angus, kremowy ser kozi, dżem cebulowy, żurawina, pomidor, rukola, sos do wyboru, bułka do wyboru</p>
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="6" data-nazwa="Pastramix – Nowość" data-cena="48">
+            <div class="img-box"><img src="images/pastramix-nowosc.webp" alt="Pastramix – Nowość"></div>
+            <div class="menu-content">
+              <h4>Pastramix – Nowość</h4>
+              <p class="price">48 zł</p>
+              <p>Wołowina Black Angus, 2× ser cheddar, pastrami, grillowana cebula, ogórek kiszony, sałata lodowa, sos musztardowo-chrzanowy</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/crispy-burger.webp" alt="Crispy Burger">
-        </div>
-        <div class="menu-content" data-id="4" data-nazwa="Crispy Burger" data-cena="46"> 
-          <h4>Crispy Burger</h4> 
-          <br><b>46 zł</b></br>
-          <p>Wołowina Black Angus, chrupiący boczek, pikantne Chorizo, ser Cheddar, pomidor, ogórek konserwowy, rukola, prażona cebulka, sos do wyboru, bułka do wyboru</p>
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="7" data-nazwa="Keto-On Burger" data-cena="46">
+            <div class="img-box"><img src="images/keto-on-burger.webp" alt="Keto-On Burger"></div>
+            <div class="menu-content">
+              <h4>Keto-On Burger</h4>
+              <p class="price">46 zł</p>
+              <p>Wołowina Black Angus, ser cheddar, boczek, awokado, jajko sadzone, aioli, cebula grillowana, sałata lodowa, bułka keto</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/smash-burger.webp" alt="Smash Burger">
-        </div>
-        <div class="menu-content" data-id="5" data-nazwa="Smash Burger" data-cena="32"> 
-          <h4>Smash Burger</h4> 
-          <br><b>32 zł</b></br>
-          <p>100% grillowanej wołowiny, ser Cheddar, chrupiący bekon, pomidor, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="8" data-nazwa="Standard Burger" data-cena="41">
+            <div class="img-box"><img src="images/standard-burger.webp" alt="Standard Burger"></div>
+            <div class="menu-content">
+              <h4>Standard Burger</h4>
+              <p class="price">41 zł</p>
+              <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/pastramix-nowosc.webp" alt="Pastramix – Nowość">
-        </div>
-        <div class="menu-content" data-id="6" data-nazwa="Pastramix – Nowość" data-cena="48"> 
-          <h4>Pastramix – Nowość</h4> 
-          <br><b>48 zł</b></br>
-          <p>Wołowina Black Angus, 2× ser cheddar, pastrami, grillowana cebula, ogórek kiszony, sałata lodowa, sos musztardowo-chrzanowy</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="9" data-nazwa="Grillowane Warzywa Burger" data-cena="38">
+            <div class="img-box"><img src="images/grillowane-warzywa-burger.webp" alt="Grillowane Warzywa Burger"></div>
+            <div class="menu-content">
+              <h4>Grillowane Warzywa Burger</h4>
+              <p class="price">38 zł</p>
+              <p>Kotlet z grillowanych warzyw, ser cheddar, pomidor, ogórek konserwowy, czerwona cebula, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/keto-on-burger.webp" alt="Keto-On Burger">
-        </div>
-        <div class="menu-content" data-id="7" data-nazwa="Keto-On Burger" data-cena="46"> 
-          <h4>Keto-On Burger</h4> 
-          <br><b>46 zł</b></br>
-          <p>Wołowina Black Angus, ser cheddar, boczek, awokado, jajko sadzone, aioli, cebula grillowana, sałata lodowa, bułka keto</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="10" data-nazwa="MINI New York Burger" data-cena="45">
+            <div class="img-box"><img src="images/mini-new-york-burger.webp" alt="MINI New York Burger"></div>
+            <div class="menu-content">
+              <h4>MINI New York Burger</h4>
+              <p class="price">45 zł</p>
+              <p>Wołowina Black Angus, ser cheddar, bekon, jajko sadzone, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/standard-burger.webp" alt="Standard Burger">
-        </div>
-        <div class="menu-content" data-id="8" data-nazwa="Standard Burger" data-cena="41"> 
-          <h4>Standard Burger</h4> 
-          <br><b>41 zł</b></br>
-          <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="11" data-nazwa="MINI Standard Burger" data-cena="35">
+            <div class="img-box"><img src="images/mini-standard-burger.webp" alt="MINI Standard Burger"></div>
+            <div class="menu-content">
+              <h4>MINI Standard Burger</h4>
+              <p class="price">35 zł</p>
+              <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/grillowane-warzywa-burger.webp" alt="Grillowane Warzywa Burger">
-        </div>
-        <div class="menu-content" data-id="9" data-nazwa="Grillowane Warzywa Burger" data-cena="38"> 
-          <h4>Grillowane Warzywa Burger</h4> 
-          <br>38 zł</br>
-          <p>Kotlet z grillowanych warzyw, ser cheddar, pomidor, ogórek konserwowy, czerwona cebula, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
+          <div class="menu-card produkt" data-id="12" data-nazwa="MINI AvoBeko Burger" data-cena="37">
+            <div class="img-box"><img src="images/avobeko-burger.webp" alt="MINI AvoBeko Burger"></div>
+            <div class="menu-content">
+              <h4>MINI AvoBeko Burger</h4>
+              <p class="price">37 zł</p>
+              <p>Wołowina Black Angus, ser cheddar, bekon, awokado, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p>
+              <div class="menu-actions"><button class="dodaj-do-koszyka">Dodaj do koszyka</button></div>
+            </div>
+          </div>
 
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/mini-new-york-burger.webp" alt="MINI New York Burger">
-        </div>
-        <div class="menu-content" data-id="10" data-nazwa="MINI New York Burger" data-cena="45"> 
-          <h4>MINI New York Burger</h4> 
-          <br><b>45 zł</b></br>
-          <p>Wołowina Black Angus, ser cheddar, bekon, jajko sadzone, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
-
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/mini-standard-burger.webp" alt="MINI Standard Burger">
-        </div>
-        <div class="menu-content" data-id="11" data-nazwa="MINI Standard Burger" data-cena="35"> 
-          <h4>MINI Standard Burger</h4> 
-          <br><b>35 zł</b></br>
-          <p>Wołowina Black Angus, pomidor, czerwona cebula, ogórek konserwowy, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
-
-      <div class="menu-card">
-        <div class="img-box">
-          <img src="images/avobeko-burger.webp" alt="MINI AvoBeko Burger">
-        </div>
-        <div class="menu-content" data-id="12" data-nazwa="MINI AvoBeko Burger" data-cena="37"> 
-          <h4>MINI AvoBeko Burger </h4> 
-          <br><b>37 zł</b></br>
-          <p>Wołowina Black Angus, ser cheddar, bekon, awokado, pomidor, cebula, ogórek, rukola oraz sos do wyboru</p> 
-          <button class="dodaj-do-koszyka">Dodaj do koszyka</button>
-        </div>
-      </div>
-          
         </div>
       </section>
 
@@ -328,10 +279,7 @@
 
       koszyk.forEach((produkt, idx) => {
         const li = document.createElement("li");
-        li.innerHTML = `
-          <span>${produkt.nazwa} x${produkt.sztuk} – ${produkt.cena * produkt.sztuk} zł</span>
-          <button class="remove-btn" onclick="usun(${idx})">Usuń</button>
-        `;
+        li.innerHTML = `<span>${produkt.nazwa} x${produkt.sztuk} – ${produkt.cena * produkt.sztuk} zł</span><button class="remove-btn" onclick="usun(${idx})">Usuń</button>`;
         koszykList.appendChild(li);
         suma += produkt.cena * produkt.sztuk;
         liczba += produkt.sztuk;
@@ -378,4 +326,3 @@
   </script>
 </body>
 </html>
-
