@@ -7,7 +7,6 @@
   --accent: #DA3A28;
 }
 
-/* ===== PODSTAWY ===== */
 body{
   background-color: var(--bg);
   font-family: Times, "Times New Roman", serif;
@@ -25,7 +24,7 @@ a:hover{
   color: var(--dark);
 }
 
-/* ===== NAWIGACJA ===== */
+/* nav */
 nav{
   position: fixed;
   top: 0;
@@ -60,12 +59,11 @@ nav a:hover{
   border-radius: 6px;
 }
 
-/* żeby treść nie chowała się pod fixed nav */
 main{
   padding-top: 70px;
 }
 
-/* ===== BANER (STRONA GŁÓWNA) ===== */
+/* baner w index*/
 .banner{
   width: 100%;
   height: 700px;
@@ -75,7 +73,7 @@ main{
   background-size: cover;
 }
 
-/* ===== SEKCJE (WSPÓLNE) ===== */
+/* sekcje */
 section, .section, .form-container{
   padding: 20px;
   background-color: var(--bg);
@@ -131,7 +129,7 @@ section, .section, .form-container{
   width: 100%;
 }
 
-/* ===== PRZYCISKI ===== */
+/*przyciski */
 button{
   padding: 10px 16px;
   background-color: var(--accent);
@@ -147,7 +145,7 @@ button:hover{
   background-color: var(--dark);
 }
 
-/* ===== MENU (CATALOG) ===== */
+/* menu + kozsyk */
 .menu-grid{
   display: flex;
   flex-direction: column;
@@ -173,7 +171,7 @@ button:hover{
 .img-box{
   width: 220px;
   height: 170px;
-  background: var(--textInv); /* białe tło pod PNG */
+  background: var(--textInv); /* białe tło */
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.15);
   display: flex;
@@ -186,7 +184,7 @@ button:hover{
 .img-box img{
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ważne: nie ucina */
+  object-fit: contain;
   display: block;
 }
 
@@ -216,9 +214,110 @@ button:hover{
   width: fit-content;
 }
 
+<style>
+    .layout{
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:20px;
+      max-width:1300px;
+      margin:20px auto;
+      padding:20px;
+      box-sizing:border-box;
+    }
+
+    .menu-col{
+      background:#E8E2D6;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      padding:20px;
+    }
+
+    .menu-col h3{
+      margin-top:0;
+      text-align:center;
+      font-size:34px;
+      color:#1A1A1A;
+    }
+
+    .cart-col{
+      position:sticky;
+      top:90px;
+      align-self:start;
+      background:#E8E2D6;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      padding:20px;
+      border:2px solid #1A1A1A;
+      box-sizing:border-box;
+    }
+
+    .cart-col h3{
+      margin:0 0 10px;
+      color:#1A1A1A;
+      text-align:center;
+      font-size:26px;
+    }
+
+    #koszyk{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    #koszyk li{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px;
+      border:2px solid #1A1A1A;
+      border-radius:10px;
+      background:#E8E2D6;
+      align-items:center;
+      box-sizing:border-box;
+    }
+
+    .cart-summary{
+      margin-top:12px;
+      padding:12px;
+      border:2px solid #1A1A1A;
+      border-radius:10px;
+      background:#C49A6C;
+      color:#1A1A1A;
+      font-weight:bold;
+      box-sizing:border-box;
+    }
+
+    .cart-summary span{font-weight:normal}
+
+    .cart-actions{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+    }
+
+    .cart-actions button{flex:1}
+
+    .remove-btn{
+      padding:6px 10px;
+      font-size:12px;
+    }
+
+    .price{
+      margin:0;
+      font-weight:bold;
+      color:#1A1A1A;
+    }
+
+    .menu-card .dodaj-do-koszyka{
+      width:fit-content;
+    }
+  </style>
 
 
-/* ===== O RESTAURACJI ===== */
+/* o nas */
 .section h2{
   color: var(--accent);
   margin-bottom: 15px;
@@ -250,7 +349,7 @@ button:hover{
   font-size: 14px;
 }
 
-/* ===== MAPA + ADRES ===== */
+/* mapa + adres */
 figure{
   margin: 0;
 }
@@ -276,7 +375,7 @@ address{
   text-align: center;
 }
 
-/* ===== FORMULARZ (NA POKAZ) ===== */
+/* formularz */
 .form-container h2, .form-container h3{
   color: var(--accent);
   margin-bottom: 10px;
