@@ -2,11 +2,9 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>O restauracji</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="projekt.css">
-  <script src="lverify.js"></script>
 </head>
 
 <body>
@@ -67,10 +65,8 @@
           src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=pl&amp;q=d11%20krak%C3%B3w&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           width="600"
           height="400"
-          style="border:0;"
-          loading="lazy"
-          allowfullscreen
-        ></iframe>
+          style="border:0;">
+          </iframe>
         <figcaption>Nasza lokalizacja</figcaption>
       </figure>
 
@@ -98,18 +94,18 @@
         </div>
 
         <label for="comments">Uwagi i sugestie:</label>
-        <textarea id="comments" name="comments" rows="5" placeholder="Napisz swoje uwagi lub sugestie..." required></textarea>
+        <textarea id="comments" name="comments" rows="5" placeholder="Napisz swoje uwagi lub sugestie..."></textarea>
 
         <h3>Formularz Kontaktowy</h3>
 
         <label for="name">Imię i nazwisko:</label>
-        <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko" required>
+        <input type="text" id="name" name="name" placeholder="Twoje imię i nazwisko">
 
         <label for="email">Adres e-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Twój adres e-mail" required>
+        <input type="email" id="email" name="email" placeholder="Twój adres e-mail">
 
         <label for="question">Twoje pytanie:</label>
-        <textarea id="question" name="question" rows="5" placeholder="Zadaj pytanie..." required></textarea>
+        <textarea id="question" name="question" rows="5" placeholder="Zadaj pytanie..."></textarea>
 
         <button type="submit">Wyślij</button>
       </form>
@@ -123,11 +119,10 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Dziękujemy za wiadomość! 😊");
+        alert("Dziękujemy za wiadomość!");
         form.reset();
       });
     });
   </script>
 </body>
 </html>
-
