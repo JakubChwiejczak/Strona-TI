@@ -214,7 +214,6 @@ button:hover{
   width: fit-content;
 }
 
-<style>
     .layout{
       display:grid;
       grid-template-columns:1fr 360px;
@@ -314,7 +313,6 @@ button:hover{
     .menu-card .dodaj-do-koszyka{
       width:fit-content;
     }
-  </style>
 
 
 /* o nas */
