@@ -70,7 +70,7 @@ section,.section,.form-container{
   margin:20px auto;
   max-width:800px;
   border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px #333;
   box-sizing:border-box;
 }
 
@@ -162,7 +162,7 @@ button:hover{
   height:170px;
   background:#FFFFFF;
   border-radius:10px;
-  border:1px solid rgba(0,0,0,0.15);
+  border:1px solid;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -203,7 +203,6 @@ button:hover{
   width:fit-content;
 }
 
-/* układ menu + boczny koszyk */
 .layout{
   display:grid;
   grid-template-columns:1fr 360px;
@@ -217,7 +216,7 @@ button:hover{
 .menu-col{
   background:#E8E2D6;
   border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  box-shadow:0 4px 10px;
   padding:20px;
 }
 
@@ -234,7 +233,7 @@ button:hover{
   align-self:start;
   background:#E8E2D6;
   border-radius:10px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  box-shadow:0 4px 10px;
   padding:20px;
   border:2px solid #1A1A1A;
   box-sizing:border-box;
